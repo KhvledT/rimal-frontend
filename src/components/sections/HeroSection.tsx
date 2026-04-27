@@ -31,16 +31,13 @@ const HeroSection = () => {
               font-serif
               text-4xl
               sm:text-5xl
-              lg:text-6xl
-              xl:text-7xl
-              2xl:text-8xl
               leading-tight
               text-primary-foreground
               whitespace-pre-line
             "
           >
-            Built to {"\n"}
-            <span className="italic text-gold">Lead</span>
+            DRIVEN BY IDEAS,{"\n"}
+            <span className="italic text-gold">POWERED BY TRUST.</span>
           </motion.h1>
 
           {/* Description */}
@@ -63,8 +60,9 @@ const HeroSection = () => {
               lg:mx-0
             "
           >
-            A diversified investment and venture group operating across Retail,
-            F&B, Real Estate, and Strategic Holdings in Qatar & GCC.
+            We transform ideas into impactful ventures, building brands that
+            inspire trust, drive innovation, and shape lifestyles across Qatar,
+            the GCC, and beyond.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -92,7 +90,8 @@ const HeroSection = () => {
               Explore Partnership
             </Link>
 
-            <a href={profilePDF}
+            <a
+              href={profilePDF}
               className="
                 px-8 py-3.5
                 border
@@ -107,9 +106,10 @@ const HeroSection = () => {
                 duration-300
                 cursor-pointer
               "
-             download>
-             Download Corporate Profile
-             </a>
+              download
+            >
+              Download Corporate Profile
+            </a>
           </motion.div>
         </div>
       </div>

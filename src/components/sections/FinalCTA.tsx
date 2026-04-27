@@ -15,7 +15,6 @@ export default function FinalCTA() {
   return (
     <section className="relative bg-foreground text-white py-36 overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center">
-
         {/* Headline */}
         <motion.div
           initial="hidden"
@@ -25,8 +24,8 @@ export default function FinalCTA() {
           custom={0}
           className="mb-12"
         >
-          <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-            Let’s Build the Future Together
+          <h2 className="font-serif text-4xl leading-tight">
+            Emphasizes Creativity, Forward-Thinking and Reliability.
           </h2>
         </motion.div>
 
@@ -37,15 +36,17 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={1}
-          className="mb-20"
         >
-          <Link to="/contact" className="bg-gold text-foreground font-medium px-10 py-4 rounded-full text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            Schedule a Strategic Discussion
+          <Link
+            to="/contact"
+            className="bg-gold text-foreground font-medium px-10 py-4 rounded-full text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-xl"
+          >
+            Schedule Discussion - Contact Us
           </Link>
         </motion.div>
 
         {/* Contact Info */}
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -67,11 +68,8 @@ export default function FinalCTA() {
             <MapPin size={16} />
             <span>Doha, Qatar</span>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
-
-      {/* Subtle Background Accent */}
-      <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent pointer-events-none" />
     </section>
   );
 }

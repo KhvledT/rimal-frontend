@@ -8,7 +8,7 @@ import Logo from "@/assets/Logo.png";
 const quickLinks = [
   { label: "About Us", path: "/about" },
   { label: "Business Sectors", path: "/businesses" },
-  { label: "Partnerships", path: "/partners" },
+  // { label: "Partnerships", path: "/partners" },
   { label: "Contact", path: "/contact" },
 ];
 

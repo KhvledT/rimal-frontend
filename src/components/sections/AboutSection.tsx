@@ -55,12 +55,13 @@ const AboutSection = () => {
               Who We Are?
             </span>
             <h2 className="font-serif font-semibold text-4xl md:text-5xl lg:text-6xl text-primary mt-2 leading-tight">
-              RIMAL
-              <br />
-              Trading Group
+              RIMAL Trading Group
             </h2>
             <p className="font-body text-base text-foreground/70 mt-8 leading-relaxed max-w-lg">
-              {siteContent.about.description}
+              Rimal Trading Group stands at the intersection of heritage and
+              modernity proud of where we come from, ambitious about where we
+              are going, and determined to build a future that reflects our
+              values.
             </p>
             <Link
               to="/about"
@@ -70,7 +71,7 @@ const AboutSection = () => {
             </Link>
 
             {/* Stats */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -87,7 +88,7 @@ const AboutSection = () => {
                   </p>
                 </div>
               ))}
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>

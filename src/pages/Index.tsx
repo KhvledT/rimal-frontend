@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
-import QuoteSection from "@/components/sections/QuoteSection"
+import QuoteSection from "@/components/sections/QuoteSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import ContactSection from "@/components/sections/ContactSection";
 import WhyPartnerWithRimal from "@/components/sections/WhyPartnerWithRimal";
@@ -20,7 +20,7 @@ const Index = () => {
       <PartnersSection />
       <QuoteSection />
       <FinalCTA />
-      <ContactSection />
+      {/* <ContactSection /> */}
     </Layout>
   );
 };

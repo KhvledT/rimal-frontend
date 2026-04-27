@@ -2,41 +2,41 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Layout from "@/components/Layout";
 import LeadershipImage from "@/assets/Leadership_Image.webp";
+import TeamSection from "@/components/sections/TeamSection";
 import { Link } from "react-router-dom";
 
 const principles = [
   {
-    title: "Integrity First",
-    description:
-      "Every decision is guided by transparency, honesty, and accountability. We believe that trust is not given — it is earned through consistent, ethical conduct.",
     num: "01",
+    title: "Passion",
+    description: "We are wholeheartedly committed to everything we do.",
   },
   {
-    title: "Long-Term Vision",
-    description:
-      "We build for decades, not quarters. Patience is our competitive advantage. Every expansion is deliberate, every market entry strategic.",
     num: "02",
+    title: "Creativity",
+    description: "Innovation is the engine that drives our success.",
   },
   {
-    title: "People-Centered Growth",
-    description:
-      "Success begins with investing in the people who drive the organization forward. Equal opportunity and investment in our team fuel every achievement.",
     num: "03",
+    title: "Persistence",
+    description:
+      "Growth takes time, and challenges strengthen our determination.",
   },
   {
-    title: "Strategic Discipline",
-    description:
-      "We enter markets with precision, not impulse. We bring what's missing and needed for the people in each community — Strategically penetrating markets to be self-sufficient.",
     num: "04",
+    title: "Humility",
+    description: "We grow with respect, responsibility, and integrity.",
   },
-];
-
-const teamMembers = [
-  { name: "Sheikh Alharith Al Thani", role: "Founder & CEO" },
-  { name: "Basem Elishaa", role: "Commercial Manager" },
-  { name: "Beshoy Emad", role: "Category Manager" },
-  { name: "Arlene Rupido", role: "Operations Assistant" },
-  { name: "Yehia Ali", role: "F&B Operations" },
+  {
+    num: "05",
+    title: "Transparency",
+    description: "We value openness and clarity in every interaction.",
+  },
+  {
+    num: "06",
+    title: "Diversity",
+    description: "Uniting different perspectives in one inclusive community.",
+  },
 ];
 
 const fadeUpVariant = {
@@ -116,10 +116,10 @@ const Leadership = () => {
             className="mb-16"
           >
             <span className="font-body text-xs uppercase tracking-[0.3em] text-gold">
-              Guiding Principles
+              Our Values
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-navy mt-3">
-              What We Stand For
+              The Values That Drive Us
             </h2>
           </motion.div>
 
@@ -179,9 +179,9 @@ const Leadership = () => {
             transition={{ duration: 1 }}
             className="relative"
           >
-            <span className="absolute -top-4 -left-0 font-serif text-8xl text-gold/60 leading-none select-none">
-            "
-          </span>
+            <span className="absolute -top-4 -left-10 font-serif text-8xl text-gold/60 leading-none select-none">
+              "
+            </span>
             <p className="font-serif italic text-2xl md:text-4xl lg:text-5xl text-primary-foreground leading-snug">
               As we expand, we remain committed to a culture where every person
               can contribute, develop, and succeed.
@@ -190,60 +190,14 @@ const Leadership = () => {
               — Sheikh Alharith Al Thani
             </p>
             <span className="absolute -bottom-8 right-0 md:right-8 font-serif text-8xl text-gold/60 leading-none select-none rotate-180">
-            "
-          </span>
+              "
+            </span>
           </motion.div>
         </div>
       </section>
 
       {/* Team */}
-      <section className="section-spacing bg-sand">
-        <div className="section-padding max-w-5xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={fadeUpVariant}
-            custom={0}
-            className="mb-16"
-          >
-            <h3 className="font-body text-xs uppercase tracking-[0.3em] text-gold text-center">
-              People
-            </h3>
-            <h2 className="font-serif text-3xl md:text-4xl text-navy mt-3 text-center">
-              Corporate Team
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {teamMembers.map((member, i) => (
-              <motion.div
-                key={member.name}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={fadeUpVariant}
-                custom={i}
-                className="bg-card p-8 text-center group hover:bg-beige transition-colors duration-500"
-              >
-                <div className="w-20 h-20 mx-auto mb-6 bg-beige group-hover:bg-card rounded-full flex items-center justify-center transition-colors duration-500">
-                  <span className="font-serif text-2xl text-gold">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")
-                      .slice(0, 2)}
-                  </span>
-                </div>
-                <h3 className="font-serif text-lg text-navy">{member.name}</h3>
-                <p className="font-body text-sm text-foreground/50 mt-1">
-                  {member.role}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TeamSection />
 
       {/* Future Plans */}
       <section className="py-20 bg-navy">
@@ -258,7 +212,7 @@ const Leadership = () => {
             <span className="font-body text-xs uppercase tracking-[0.3em] text-gold">
               Looking Ahead
             </span>
-            <h2 className="font-serif text-2xl md:text-3xl text-beige mt-4 leading-relaxed">
+            <h2 className="font-serif text-2xl md:text-2xl italic text-beige mt-4 leading-relaxed">
               To expand our portfolio across multiple sectors, strengthen
               operational efficiency, and position Rimal Group as a trusted name
               in global markets.

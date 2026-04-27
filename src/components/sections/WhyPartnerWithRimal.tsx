@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 export default function WhyPartnerWithRimal() {
   const culture = [
-    { point: "Strong Market Access (Qatar & GCC)" },
-    { point: "Operational Excellence & Structured Growth" },
-    { point: "Multi-sector Expansion Strategy" },
+    { point: "Deliver value beyond the transaction" },
+    { point: "Listen actively and understand real needs" },
+    { point: "Operate with integrity in every interaction" },
   ];
 
   const fadeUpVariant = {
@@ -19,7 +19,6 @@ export default function WhyPartnerWithRimal() {
   return (
     <section className="relative bg-sand pt-24 pb-28">
       <div className="max-w-5xl mx-auto px-6">
-
         {/* Decorative top line */}
         <div className="w-16 h-[2px] bg-gold mb-8 opacity-60" />
 
@@ -32,17 +31,17 @@ export default function WhyPartnerWithRimal() {
           className="mb-16"
         >
           <span className="font-body text-xs uppercase tracking-[0.35em] text-gold">
-            Why Partner With Rimal
+            Our Approach
           </span>
 
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mt-4 leading-snug">
-            Building Strategic Growth Across Qatar & Beyond
+            Building Trust Before Transactions
           </h2>
 
           <p className="font-body text-base text-foreground/60 mt-6 max-w-2xl leading-relaxed">
-            Rimal Trading Group combines regional expertise, structured operations,
-            and diversified expansion strategies to create long-term value
-            partnerships across multiple sectors.
+            We build trust before transactions, delivering value through
+            integrity, active listening, and long-term commitment to every
+            partnership.
           </p>
         </motion.div>
 

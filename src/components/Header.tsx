@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Home", path: "/" },
   { label: "About RIMAL", path: "/about" },
   { label: "Our Businesses", path: "/businesses" },
-  { label: "Partners", path: "/partners" },
+  // { label: "Partners", path: "/partners" },
   { label: "Leadership", path: "/leadership" },
 ];
 
@@ -70,9 +70,7 @@ const Header = () => {
                 {/* Animated underline */}
                 <span
                   className={`absolute left-0 -bottom-2 h-[2px] bg-gold transition-all duration-300 ${
-                    isActive
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
               </li>

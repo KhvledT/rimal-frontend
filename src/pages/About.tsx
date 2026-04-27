@@ -17,12 +17,13 @@ const culture = [
   { point: "Sales create revenue, but trust builds brands." },
   {
     point:
-      "A first sale keeps you running today — trust keeps you thriving for decades.",
+      "A first sale keeps you running today, trust keeps you thriving for decades.",
   },
   {
     point:
-      "People don't just buy products, they buy belief, reliability, and consistency.",
+      "People don’t just buy products, they buy belief, reliability, and consistency.",
   },
+  { point: "We deliver value, listen actively, and act with integrity." },
 ];
 
 const fadeUpVariant = {
@@ -158,10 +159,7 @@ const About = () => {
               Founder & CEO
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-navy mt-3">
-              A Message from{" "}
-              <span className="italic text-primary">
-                Sheikh Alharith Al Thani
-              </span>
+              A Message from <span className="italic text-primary">CEO</span>
             </h2>
           </motion.div>
 
@@ -195,7 +193,7 @@ const About = () => {
             custom={4}
             className="font-serif italic text-gold text-lg mt-10 md:pl-16"
           >
-            — "Driven by Ideas. Powered by Trust."
+            "Driven by Ideas. Powered by Trust."
           </motion.p>
         </div>
       </section>
@@ -261,7 +259,8 @@ const About = () => {
             </h2>
             <p className="font-body text-base text-foreground/60 mt-4 max-w-xl">
               At Rimal, success is a mindset, not an option. We build trust
-              before transactions.
+              before transactions, because lasting brands are built on belief,
+              reliability, and consistency.
             </p>
           </motion.div>
 
@@ -289,9 +288,9 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="relative bg-foreground text-white py-36 overflow-hidden">
+      {/* <section className="relative bg-foreground text-white py-36 overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          {/* Headline */}
+          Headline
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -312,7 +311,7 @@ const About = () => {
             </h2>
           </motion.div>
 
-          {/* CTA Button */}
+          CTA Button
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -328,12 +327,15 @@ const About = () => {
             custom={1}
             className="mb-20"
           >
-            <Link to={'/partners'} className="bg-gold text-foreground font-medium px-10 py-4 rounded-full text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <Link
+              to={"/partners"}
+              className="bg-gold text-foreground font-medium px-10 py-4 rounded-full text-sm tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
               Partners
             </Link>
           </motion.div>
 
-          {/* Contact Info */}
+          Contact Info
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -366,9 +368,9 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Subtle Background Accent */}
+        Subtle Background Accent
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent pointer-events-none" />
-      </section>
+      </section> */}
     </Layout>
   );
 };
