@@ -41,14 +41,14 @@ const ProfileModal = ({ member, onClose }: Props) => {
               onClick={(e) => e.stopPropagation()}
             >
               {/* ── LEFT PANEL ── */}
-              <div className="relative md:w-72 flex-shrink-0 bg-navy flex flex-col items-center justify-center py-12 px-8 overflow-hidden">
+              <div className="relative md:w-72 flex-shrink-0 bg-navy flex flex-col items-center justify-center py-6 px-4 md:py-12 md:px-8 overflow-hidden">
                 {/* Decorative background circles */}
-                <div className="absolute -top-16 -left-16 w-56 h-56 rounded-full bg-gold/5 pointer-events-none" />
-                <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-gold/5 pointer-events-none" />
+                <div className="absolute -top-16 -left-16 w-48 h-48 md:w-56 md:h-56 rounded-full bg-gold/5 pointer-events-none" />
+                <div className="absolute -bottom-12 -right-12 w-40 h-40 md:w-48 md:h-48 rounded-full bg-gold/5 pointer-events-none" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-gold/5 to-transparent pointer-events-none" />
 
                 {/* Avatar */}
-                <div className="relative z-10 w-36 h-36 rounded-full overflow-hidden bg-beige flex items-center justify-center ring-4 ring-gold/40 shadow-xl mb-6">
+                <div className="relative z-10 w-20 h-20 md:w-36 md:h-36 rounded-full overflow-hidden bg-beige flex items-center justify-center ring-4 ring-gold/40 shadow-xl mb-3 md:mb-6">
                   {member.photo ? (
                     <img
                       src={member.photo}
@@ -56,7 +56,7 @@ const ProfileModal = ({ member, onClose }: Props) => {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <span className="font-serif text-5xl text-gold select-none">
+                    <span className="font-serif text-3xl md:text-5xl text-gold select-none">
                       {member.name
                         .split(" ")
                         .map((n) => n[0])
@@ -69,29 +69,29 @@ const ProfileModal = ({ member, onClose }: Props) => {
                 {/* Name */}
                 <h2
                   id="profile-modal-name"
-                  className="relative z-10 font-serif text-xl text-primary-foreground text-center leading-snug"
+                  className="relative z-10 font-serif text-lg md:text-xl text-primary-foreground text-center leading-snug"
                 >
                   {member.name}
                 </h2>
 
                 {/* Role pill */}
-                <span className="relative z-10 mt-3 inline-block font-body text-[10px] uppercase tracking-[0.2em] text-gold border border-gold/40 px-3 py-1">
+                <span className="relative z-10 mt-2 md:mt-3 inline-block font-body text-[10px] uppercase tracking-[0.2em] text-gold border border-gold/40 px-2 py-0.5 md:px-3 md:py-1">
                   {member.role}
                 </span>
 
                 {/* Department */}
-                <p className="relative z-10 mt-4 font-body text-xs text-primary-foreground/40 text-center">
+                <p className="relative z-10 mt-2 md:mt-4 font-body text-xs text-primary-foreground/40 text-center">
                   {member.department}
                 </p>
 
                 {/* Gold divider */}
-                <div className="relative z-10 w-10 h-[1px] bg-gold/30 my-6" />
+                <div className="relative z-10 w-8 md:w-10 h-[1px] bg-gold/30 my-4 md:my-6" />
 
                 {/* Email */}
                 {member.email && (
                   <a
                     href={`mailto:${member.email}`}
-                    className="relative z-10 font-body text-xs text-primary-foreground/50 hover:text-gold transition-colors duration-200 break-all text-center"
+                    className="relative z-10 font-body text-[10px] md:text-xs text-primary-foreground/50 hover:text-gold transition-colors duration-200 break-all text-center"
                   >
                     {member.email}
                   </a>
@@ -99,7 +99,7 @@ const ProfileModal = ({ member, onClose }: Props) => {
               </div>
 
               {/* ── RIGHT PANEL ── */}
-              <div className="flex-1 flex flex-col overflow-y-auto">
+              <div className="flex-1 flex flex-col overflow-y-auto min-h-0">
                 {/* Gold top bar */}
                 <div className="h-1 w-full bg-gold flex-shrink-0" />
 
