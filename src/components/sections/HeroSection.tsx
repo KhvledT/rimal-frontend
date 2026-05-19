@@ -14,7 +14,7 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Corporate partnership"
-          className="w-full h-full object-cover scale-150 lg:scale-100"
+          className="w-full h-full object-cover scale-150 lg:scale-90 overflow-visible"
         />
         <div className="absolute top-0 left-0 w-full h-full"></div>
       </div>

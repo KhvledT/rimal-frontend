@@ -13,9 +13,11 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: instagramIcon, label: "Instagram", href: "#" },
-  { icon: twitterIcon, label: "Twitter", href: "#" },
-  { icon: linkedinIcon, label: "LinkedIn", href: "#" },
+  {
+    icon: linkedinIcon,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/rimal-trading-group/",
+  },
 ];
 
 const Footer = () => {
@@ -38,11 +40,24 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            <div className="flex flex-col gap-2 pt-2">
-              <p>CR No.</p>
-              <p>Doha, Qatar</p>
-              <p>info@rimalgroup.qa</p>
-              <p>+974 XXXXXXXX</p>
+            <div className="flex flex-col gap-2 pt-2 text-sm">
+              <p>
+                Rimal Trading Group, Lusail, Zone 69, St. 206, Building 45, 2nd
+                Floor, Unit# 2001 - P.O. BOX 36117, Doha, Qatar.
+              </p>
+              <p>
+                <span className="font-extrabold">C.R Number:</span> 220638
+              </p>
+              <p>
+                <span className="font-extrabold">Tel:</span> 4143 6200
+              </p>
+              <p>
+                <span className="font-extrabold">Mob:</span> 3035 0045
+              </p>
+              <p>
+                <span className="font-extrabold">Mail:</span>{" "}
+                <a href="mailto:[EMAIL_ADDRESS]">info@rimalgroupqa.com</a>
+              </p>
             </div>
           </div>
 

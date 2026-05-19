@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Layout from "@/components/Layout";
 import { siteContent } from "@/data/content";
 import { MapPin, Mail, Phone, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -18,7 +19,6 @@ const contactInfo = [
   { icon: MapPin, label: "Address", value: siteContent.company.address },
   { icon: Mail, label: "Email", value: siteContent.company.email },
   { icon: Phone, label: "Phone", value: siteContent.company.phone },
-  { icon: Globe, label: "Website", value: siteContent.company.website },
 ];
 
 const Contact = () => {
@@ -184,13 +184,10 @@ const Contact = () => {
                 </h3>
                 <div className="flex gap-6">
                   <span className="font-body text-sm text-foreground/50">
-                    @{siteContent.company.social.instagram}
-                  </span>
-                  <span className="font-body text-sm text-foreground/50">
-                    @{siteContent.company.social.twitter}
-                  </span>
-                  <span className="font-body text-sm text-foreground/50">
-                    @{siteContent.company.social.linkedin}
+                    <Link to="https://www.linkedin.com/company/rimal-trading-group/">
+                      <span className="font-bold">LinkedIn:</span> @
+                      {siteContent.company.social.linkedin}
+                    </Link>
                   </span>
                 </div>
               </motion.div>

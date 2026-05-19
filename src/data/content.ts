@@ -7,14 +7,12 @@ export const siteContent = {
       "Strategic Trading & Investment Group\nDriving Growth Through Vision and Trust.",
     founding: "2025",
     ceo: "Sheikh Alharith Al Thani",
-    email: "asalthani@rimalgroupqa.com",
-    phone: "+974 0000 0077",
-    website: "rimalgroupqa.com",
-    address: "Rimal Avenue, Building 21\nFinancial Zone, Doha, Qatar",
+    email: "info@rimalgroupqa.com",
+    phone: "Tel: 4143 6200, Mob: 3035 0045",
+    address:
+      "Rimal Trading Group, Lusail, Zone 69, St. 206, Building 45, 2nd Floor, Unit# 2001 - P.O. BOX 36117, Doha, Qatar.",
     social: {
-      instagram: "rimalgroup_qa",
-      twitter: "rimal.qa",
-      linkedin: "rimalgroupqa",
+      linkedin: "rimal-trading-group",
     },
   },
   about: {
