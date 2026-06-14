@@ -80,7 +80,7 @@ const Footer = () => {
 
           {/* Brand */}
           <div className="md:text-right">
-            <h4 className="font-serif text-2xl italic text-gold mb-4">RIMAL</h4>
+            <h4 className="font-serif text-2xl italic text-gold mb-4">RTG</h4>
             <p className="font-body text-sm leading-relaxed text-beige/60">
               {siteContent.footerTagline}
             </p>

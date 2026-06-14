@@ -123,22 +123,6 @@ export const leadership = [
     linkedin: "https://www.linkedin.com",
   },
   {
-    name: "Beshoy Emad",
-    role: "Category Manager",
-    department: "Product & Category Management",
-    email: "beshoy@rimalgroup.com",
-    photo: undefined,
-    description:
-      "Oversees category strategy and product portfolio management across all Rimal Group verticals. Beshoy ensures that every product line is positioned for optimal performance, leading vendor negotiations, assortment planning, and market alignment to deliver consistent quality and competitive value.",
-    expertise: [
-      "Category Strategy",
-      "Portfolio Management",
-      "Vendor Negotiations",
-      "Market Alignment",
-    ],
-    linkedin: "https://www.linkedin.com",
-  },
-  {
     name: "Arlene Rupido",
     role: "Operations Assistant",
     department: "Operations & Administration",
@@ -151,22 +135,6 @@ export const leadership = [
       "Project Support",
       "Administration",
       "Process Efficiency",
-    ],
-    linkedin: "https://www.linkedin.com",
-  },
-  {
-    name: "Yehia Ali",
-    role: "F&B Operations",
-    department: "Food & Beverage",
-    email: "yehia@rimalgroup.com",
-    photo: undefined,
-    description:
-      "Manages end-to-end food & beverage operations across Rimal Group's hospitality outlets. Yehia drives operational standards, guest experience quality, and team performance while overseeing supply chain coordination, menu execution, and compliance with the highest industry benchmarks.",
-    expertise: [
-      "F&B Management",
-      "Guest Experience",
-      "Supply Chain",
-      "Hospitality Standards",
     ],
     linkedin: "https://www.linkedin.com",
   },

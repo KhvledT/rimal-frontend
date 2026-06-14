@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-handshake.webp";
-import profilePDF from "@/assets/Profile PDF/RTG - Rimal Company profile.pdf";
+import profilePDF from "@/assets/Profile PDF/Rimal_Corporate_Profile.pdf";
 
 const HeroSection = () => {
   return (

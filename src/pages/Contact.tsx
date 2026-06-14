@@ -208,7 +208,7 @@ const Contact = () => {
         <iframe
           id="contact-map"
           title="Rimal Group Office Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.3!2d51.5310!3d25.3200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c534ffdce87f%3A0xe74a2bde6bdda562!2sWest%20Bay%2C%20Doha%2C%20Qatar!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3603.522335618881!2d51.502148000000005!3d25.420795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDI1JzE0LjkiTiA1McKwMzAnMDcuNyJF!5e0!3m2!1sen!2seg!4v1781442852035!5m2!1sen!2seg"
           width="100%"
           height="100%"
           style={{ border: 0, filter: "grayscale(20%) contrast(1.05)" }}
