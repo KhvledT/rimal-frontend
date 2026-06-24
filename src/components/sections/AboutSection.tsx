@@ -57,7 +57,7 @@ const AboutSection = () => {
             <h2 className="font-serif font-semibold text-4xl md:text-5xl lg:text-6xl text-primary mt-2 leading-tight">
               RIMAL Trading Group
             </h2>
-            <p className="font-body text-base text-foreground/70 mt-8 leading-relaxed max-w-lg">
+            <p className="font-body text-base text-foreground mt-8 leading-relaxed max-w-lg">
               Rimal Trading Group stands at the intersection of heritage and
               modernity proud of where we come from, ambitious about where we
               are going, and determined to build a future that reflects our

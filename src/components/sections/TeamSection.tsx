@@ -76,7 +76,9 @@ const TeamSection = () => {
                     </span>
                   )}
                 </div>
-                <h3 className="font-serif text-lg text-navy">{member.name}</h3>
+                <h3 className="font-serif text-lg text-navy capitalize">
+                  {member.name}
+                </h3>
                 <p className="font-body text-sm text-foreground/50 mt-1">
                   {member.role}
                 </p>

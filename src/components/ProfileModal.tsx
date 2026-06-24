@@ -69,20 +69,15 @@ const ProfileModal = ({ member, onClose }: Props) => {
                 {/* Name */}
                 <h2
                   id="profile-modal-name"
-                  className="relative z-10 font-serif text-lg md:text-xl text-primary-foreground text-center leading-snug"
+                  className="relative z-10 font-serif text-lg md:text-xl text-primary-foreground text-center leading-snug capitalize"
                 >
                   {member.name}
                 </h2>
 
                 {/* Role pill */}
-                <span className="relative z-10 mt-2 md:mt-3 inline-block font-body text-[10px] uppercase tracking-[0.2em] text-gold border border-gold/40 px-2 py-0.5 md:px-3 md:py-1">
+                <span className="relative z-10 mt-2 md:mt-3 inline-block font-body text-[10px] tracking-[0.2em] text-gold border border-gold/40 px-2 py-0.5 md:px-3 md:py-1 capitalize">
                   {member.role}
                 </span>
-
-                {/* Department */}
-                <p className="relative z-10 mt-2 md:mt-4 font-body text-xs text-primary-foreground/40 text-center">
-                  {member.department}
-                </p>
 
                 {/* Gold divider */}
                 <div className="relative z-10 w-8 md:w-10 h-[1px] bg-gold/30 my-4 md:my-6" />
@@ -134,26 +129,6 @@ const ProfileModal = ({ member, onClose }: Props) => {
                     <p className="font-body text-sm text-foreground/70 leading-relaxed mt-3">
                       {member.description}
                     </p>
-                  </div>
-
-                  {/* Info grid */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-sand p-4">
-                      <p className="font-body text-[10px] uppercase tracking-widest text-gold/70 mb-1">
-                        Department
-                      </p>
-                      <p className="font-body text-sm text-navy font-medium">
-                        {member.department}
-                      </p>
-                    </div>
-                    <div className="bg-sand p-4">
-                      <p className="font-body text-[10px] uppercase tracking-widest text-gold/70 mb-1">
-                        Title
-                      </p>
-                      <p className="font-body text-sm text-navy font-medium">
-                        {member.role}
-                      </p>
-                    </div>
                   </div>
 
                   {/* Expertise tags */}
