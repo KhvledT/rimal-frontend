@@ -186,7 +186,7 @@ const Leadership = () => {
               As we expand, we remain committed to a culture where every person
               can contribute, develop, and succeed.
             </p>
-            <p className="font-body text-sm text-gold mt-6 tracking-widest uppercase">
+            <p className="font-body text-sm text-gold mt-6 tracking-widest capitalize">
               — Message from Founder & CEO
             </p>
             <span className="absolute -bottom-8 right-0 md:right-8 font-serif text-8xl text-gold/60 leading-none select-none rotate-180">
