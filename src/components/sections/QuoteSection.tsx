@@ -27,7 +27,7 @@ const QuoteSection = () => {
           </span>
 
           <p className="font-body text-sm text-primary-foreground/60 mt-5 max-w-xl mx-auto">
-            Message from Founder & CEO
+            — Message from Founder & CEO
           </p>
         </motion.div>
       </div>
