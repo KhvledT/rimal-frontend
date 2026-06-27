@@ -11,7 +11,7 @@ export const siteContent = {
     subtitle:
       "Strategic Trading & Investment Group\nDriving Growth Through Vision and Trust.",
     founding: "2025",
-    ceo: "Sheikh Alharith Al Thani",
+    ceo: "CEO",
     email: "info@rimalgroupqa.com",
     phone: "Tel: 4143 6200, Mob: 3035 0045",
     address:
