@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { fadeUpVariant } from "@/lib/animations";
 
 export default function WhyPartnerWithRimal() {
   const culture = [
@@ -6,15 +7,6 @@ export default function WhyPartnerWithRimal() {
     { point: "Listen actively and understand real needs" },
     { point: "Operate with integrity in every interaction" },
   ];
-
-  const fadeUpVariant = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: i * 0.12, ease: "easeOut" as const },
-    }),
-  };
 
   return (
     <section className="relative bg-sand pt-24 pb-28">

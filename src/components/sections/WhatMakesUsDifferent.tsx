@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { fadeUpVariant } from "@/lib/animations";
 
 export default function WhatMakesUsDifferent() {
   const points = [
@@ -16,15 +17,6 @@ export default function WhatMakesUsDifferent() {
     },
   ];
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: i * 0.12 },
-    }),
-  };
-
   return (
     <section className="bg-white py-32">
       <div className="max-w-5xl mx-auto px-6 text-center">
@@ -34,7 +26,7 @@ export default function WhatMakesUsDifferent() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={fadeUp}
+              variants={fadeUpVariant}
           custom={0}
           className="mb-20"
         >
@@ -56,7 +48,7 @@ export default function WhatMakesUsDifferent() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={fadeUp}
+                  variants={fadeUpVariant}
               className="group relative"
             >
               {/* Big Background Number */}

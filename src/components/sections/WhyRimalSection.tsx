@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
-import { siteContent } from "@/data/content";
+import { siteContent } from "@/data/company";
 
 const WhyRimalSection = () => {
   return (

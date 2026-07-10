@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { siteContent } from "@/data/content";
-import instagramIcon from "@/assets/Icons/InstagramIcon.png";
+import { siteContent } from "@/data/company";
 import linkedinIcon from "@/assets/Icons/LinkedinIcon.png";
-import twitterIcon from "@/assets/Icons/TwitterIcon.png";
-import Logo from "@/assets/Logo.png";
+import Logo from "@/assets/Logo.webp";
 
 const quickLinks = [
   { label: "About Us", path: "/about" },
   { label: "Business Sectors", path: "/businesses" },
+  { label: "Leadership", path: "/leadership" },
   // { label: "Partnerships", path: "/partners" },
   { label: "Contact", path: "/contact" },
 ];
@@ -34,6 +33,8 @@ const Footer = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 border border-gold/40 flex items-center justify-center text-gold/70 hover:text-gold hover:border-gold transition-colors duration-300"
                 >
                   <img src={social.icon} alt={social.label} />
@@ -56,7 +57,7 @@ const Footer = () => {
               </p>
               <p>
                 <span className="font-extrabold">Mail:</span>{" "}
-                <a href="mailto:[EMAIL_ADDRESS]">info@rimalgroupqa.com</a>
+                <a href={`mailto:${siteContent.company.email}`}>{siteContent.company.email}</a>
               </p>
             </div>
           </div>

@@ -2,16 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ProfileModal from "@/components/ProfileModal";
 import type { ProfileData } from "@/types/profile";
-import { leadership } from "@/data/content";
-
-const fadeUpVariant = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay: i * 0.12, ease: "easeOut" as const },
-  }),
-};
+import { leadership } from "@/data/team";
+import { fadeUpVariant } from "@/lib/animations";
 
 const teamMembers = leadership;
 

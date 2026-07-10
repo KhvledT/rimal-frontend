@@ -2,8 +2,7 @@ import Layout from "@/components/Layout";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import QuoteSection from "@/components/sections/QuoteSection";
-import PartnersSection from "@/components/sections/PartnersSection";
-import ContactSection from "@/components/sections/ContactSection";
+import TeamSection from "@/components/sections/TeamSection";
 import WhyPartnerWithRimal from "@/components/sections/WhyPartnerWithRimal";
 import Cards5 from "@/components/sections/Cards5";
 import WhatMakesUsDifferent from "@/components/sections/WhatMakesUsDifferent";
@@ -17,10 +16,9 @@ const Index = () => {
       <WhyPartnerWithRimal />
       <Cards5 />
       <WhatMakesUsDifferent />
-      <PartnersSection />
+      <TeamSection />
       <QuoteSection />
       <FinalCTA />
-      {/* <ContactSection /> */}
     </Layout>
   );
 };

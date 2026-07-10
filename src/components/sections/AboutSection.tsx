@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { siteContent } from "@/data/content";
 import heroImage from "@/assets/About_Image.webp";
 import bgImage from "@/assets/About_Bg.webp";
 

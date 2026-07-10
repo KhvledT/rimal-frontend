@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { fadeUpVariant } from "@/lib/animations";
 
 export default function StrategicNumbers() {
   const stats = [
@@ -7,15 +8,6 @@ export default function StrategicNumbers() {
     { value: "3+", label: "Markets" },
     { value: "Regional", label: "Strategic Vision" },
   ];
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: i * 0.15 },
-    }),
-  };
 
   return (
     <section className="bg-navy text-white py-28">
@@ -40,7 +32,7 @@ export default function StrategicNumbers() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={fadeUp}
+              variants={fadeUpVariant}
               className="group"
             >
               <div className="text-5xl md:text-6xl font-serif font-bold text-gold mb-4 transition-all duration-300 group-hover:scale-105">
