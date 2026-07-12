@@ -1,4 +1,5 @@
 export type ProfileData = {
+  _id?: string;
   name: string;
   role: string;
   department: string;

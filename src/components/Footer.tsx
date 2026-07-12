@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { siteContent } from "@/data/company";
 import linkedinIcon from "@/assets/Icons/LinkedinIcon.png";
 import Logo from "@/assets/Logo.webp";
+import { useContactInfo } from "@/hooks/useContactInfo";
 
 const quickLinks = [
   { label: "About Us", path: "/about" },
@@ -20,6 +21,8 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { data: contactInfo, isLoading, isError } = useContactInfo();
+
   return (
     <footer className="bg-charcoal text-beige/80">
       <div className="section-padding py-16 md:py-20">
@@ -28,36 +31,72 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-lg text-beige mb-6">Connect</h4>
             <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 border border-gold/40 flex items-center justify-center text-gold/70 hover:text-gold hover:border-gold transition-colors duration-300"
-                >
-                  <img src={social.icon} alt={social.label} />
-                </a>
-              ))}
+              {socialLinks.map((social) => {
+                const href =
+                  social.label === "LinkedIn" && contactInfo?.linkedIn
+                    ? contactInfo.linkedIn
+                    : "#";
+                return (
+                  <a
+                    key={social.label}
+                    href={href}
+                    aria-label={social.label}
+                    target={href !== "#" ? "_blank" : undefined}
+                    rel={href !== "#" ? "noopener noreferrer" : undefined}
+                    className="w-10 h-10 border border-gold/40 flex items-center justify-center text-gold/70 hover:text-gold hover:border-gold transition-colors duration-300"
+                  >
+                    <img src={social.icon} alt={social.label} />
+                  </a>
+                );
+              })}
             </div>
             <div className="flex flex-col gap-2 pt-2 text-sm">
-              <p>
-                Rimal Trading Group, Lusail, Zone 69, St. 206, Building 45, 2nd
-                Floor, Unit# 2001 - P.O. BOX 36117, Doha, Qatar.
-              </p>
+              {isLoading ? (
+                <p className="opacity-40 animate-pulse">Loading address...</p>
+              ) : isError || !contactInfo?.address ? (
+                <p className="text-red-400/60 text-xs">Address unavailable</p>
+              ) : (
+                <p>{contactInfo.address}</p>
+              )}
+
               <p>
                 <span className="font-extrabold">C.R Number:</span> 220638
               </p>
-              <p>
-                <span className="font-extrabold">Tel:</span> 4143 6200
-              </p>
-              <p>
-                <span className="font-extrabold">Mob:</span> 3035 0045
-              </p>
+
+              {isLoading ? (
+                <p className="opacity-40 animate-pulse">
+                  Loading phone numbers...
+                </p>
+              ) : isError ||
+                !contactInfo?.phones ||
+                contactInfo.phones.length === 0 ? (
+                <p className="text-red-400/60 text-xs">Phones unavailable</p>
+              ) : (
+                contactInfo.phones.map((phone, idx) => (
+                  <p key={idx}>
+                    <span className="font-extrabold">
+                      {idx === 0 ? "Tel:" : "Mob:"}
+                    </span>{" "}
+                    {phone}
+                  </p>
+                ))
+              )}
+
               <p>
                 <span className="font-extrabold">Mail:</span>{" "}
-                <a href={`mailto:${siteContent.company.email}`}>{siteContent.company.email}</a>
+                {isLoading ? (
+                  <span className="opacity-40 animate-pulse">Loading...</span>
+                ) : isError ||
+                  !contactInfo?.emails ||
+                  contactInfo.emails.length === 0 ? (
+                  <span className="text-red-400/60 text-xs">
+                    Email unavailable
+                  </span>
+                ) : (
+                  <a href={`mailto:${contactInfo.emails[0]}`}>
+                    {contactInfo.emails[0]}
+                  </a>
+                )}
               </p>
             </div>
           </div>

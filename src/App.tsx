@@ -16,7 +16,16 @@ const Leadership = lazy(() => import("./pages/Leadership"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes — prevents duplicate fetches across components
+      gcTime: 10 * 60 * 1000, // 10 minutes — keep data in cache between page navigations
+      retry: 1, // only 1 retry on failure instead of 3
+      refetchOnWindowFocus: false, // don't refetch every time user switches tabs
+    },
+  },
+});
 
 const App = () => (
   <LenisProvider>

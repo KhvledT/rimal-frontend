@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-handshake.webp";
-import profilePDF from "@/assets/Profile PDF/Rimal_Corporate_Profile.pdf";
+import { getProfileDownloadUrl } from "@/services/corporateProfile.service";
 
 const HeroSection = () => {
   return (
@@ -91,7 +91,7 @@ const HeroSection = () => {
             </Link>
 
             <a
-              href={profilePDF}
+              href={getProfileDownloadUrl()}
               className="
                 px-8 py-3.5
                 border

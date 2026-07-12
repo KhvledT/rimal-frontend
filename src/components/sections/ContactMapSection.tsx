@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useContactInfo } from "@/hooks/useContactInfo";
 
 const ContactMapSection = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const { data: contactData, isLoading: isContactLoading, isError: isContactError } = useContactInfo();
+  const [isIframeLoading, setIsIframeLoading] = useState(true);
+
+  const mapSrc = contactData?.mapUrl;
+  const showLoader = isContactLoading || (!!mapSrc && isIframeLoading);
 
   return (
     <motion.section
@@ -14,7 +19,7 @@ const ContactMapSection = () => {
       aria-label="Office location map"
     >
       <AnimatePresence>
-        {isLoading && (
+        {showLoader && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeOut" } }}
@@ -95,19 +100,29 @@ const ContactMapSection = () => {
         )}
       </AnimatePresence>
 
-      <iframe
-        id="contact-map"
-        title="Rimal Group Office Location"
-        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3603.522335618881!2d51.502148000000005!3d25.420795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDI1JzE0LjkiTiA1McKwMzAnMDcuNyJF!5e0!3m2!1sen!2seg!4v1781442852035!5m2!1sen!2seg"
-        width="90%"
-        height="90%"
-        style={{ border: 0, filter: "grayscale(20%) contrast(1.05)" }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        className="absolute inset-0 max-w-5xl h-full mx-auto shadow-lg rounded-xl"
-        onLoad={() => setIsLoading(false)}
-      />
+      {isContactError || (!isContactLoading && !mapSrc) ? (
+        <div className="absolute inset-0 max-w-5xl h-full mx-auto shadow-lg rounded-xl bg-beige/30 flex flex-col items-center justify-center border border-gold/10">
+          <p className="font-body text-sm text-foreground/50 text-navy">
+            Map location is currently unavailable.
+          </p>
+        </div>
+      ) : (
+        !!mapSrc && (
+          <iframe
+            id="contact-map"
+            title="Rimal Group Office Location"
+            src={mapSrc}
+            width="90%"
+            height="90%"
+            style={{ border: 0, filter: "grayscale(20%) contrast(1.05)" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0 max-w-5xl h-full mx-auto shadow-lg rounded-xl"
+            onLoad={() => setIsIframeLoading(false)}
+          />
+        )
+      )}
     </motion.section>
   );
 };

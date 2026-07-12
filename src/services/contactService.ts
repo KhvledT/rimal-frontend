@@ -1,19 +1,36 @@
 import { httpClient } from "./httpClient";
 import type { ContactFormData } from "@/schemas/contactSchema";
 
+export interface ContactInfo {
+  _id: string;
+  address: string;
+  emails: string[];
+  phones: string[];
+  linkedIn: string;
+  mapUrl: string;
+}
+
+interface ContactInfoResponse {
+  message: string;
+  result: ContactInfo;
+}
+
+interface ContactSubmitResponse {
+  message: string;
+  result: unknown;
+}
+
 /**
- * Contact service — Submits contact form details.
- * Connects to the backend via httpClient when VITE_API_URL is configured,
- * otherwise falls back to a mock submission with visual latency.
+ * Fetches company contact details from the backend.
+ */
+export async function getContactInfo(): Promise<ContactInfo> {
+  const response = await httpClient.get<ContactInfoResponse>("/contact-info");
+  return response.result;
+}
+
+/**
+ * Submits a contact inquiry to the backend.
  */
 export async function submitContact(data: ContactFormData): Promise<void> {
-  const isApiConfigured = !!import.meta.env.VITE_API_URL;
-
-  if (isApiConfigured) {
-    return httpClient.post<void>("/contact", data);
-  }
-
-  // Mock fallback for local development
-  console.info("[contactService] Submitting contact form (mock):", data);
-  await new Promise((resolve) => setTimeout(resolve, 600));
+  await httpClient.post<ContactSubmitResponse>("/contact", data);
 }

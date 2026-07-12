@@ -4,19 +4,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { MapPin, Mail, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
-import { siteContent } from "@/data/company";
+import { useContactInfo } from "@/hooks/useContactInfo";
 import { fadeUpVariant } from "@/lib/animations";
 import { contactSchema, type ContactFormData } from "@/schemas/contactSchema";
 import { submitContact } from "@/services/contactService";
 
-const contactInfo = [
-  { icon: MapPin, label: "Address", value: siteContent.company.address },
-  { icon: Mail, label: "Email", value: siteContent.company.email },
-  { icon: Phone, label: "Phone", value: siteContent.company.phone },
-];
-
 const ContactFormSection = () => {
+  const { data: contactData, isLoading: isContactLoading, isError: isContactError } = useContactInfo();
+
   const {
     register,
     handleSubmit,
@@ -32,12 +27,47 @@ const ContactFormSection = () => {
       toast.success("Message sent! We'll be in touch shortly.");
       reset();
     },
-    onError: (error: Error) => {
-      toast.error(`Something went wrong: ${error.message}`);
+    onError: (error: unknown) => {
+      const axiosError = error as { response?: { status?: number }; message?: string };
+      if (axiosError?.response?.status === 429) {
+        toast.error("Too many attempts. Please try again later.");
+      } else {
+        toast.error(`Something went wrong: ${axiosError?.message || "Failed to submit message"}`);
+      }
     },
   });
 
   const onSubmit = (data: ContactFormData) => mutation.mutate(data);
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      label: "Address",
+      value: isContactLoading
+        ? "Loading address..."
+        : isContactError || !contactData?.address
+        ? "Address unavailable"
+        : contactData.address,
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      value: isContactLoading
+        ? "Loading email..."
+        : isContactError || !contactData?.emails || contactData.emails.length === 0
+        ? "Email unavailable"
+        : contactData.emails[0],
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: isContactLoading
+        ? "Loading phone numbers..."
+        : isContactError || !contactData?.phones || contactData.phones.length === 0
+        ? "Phone unavailable"
+        : contactData.phones.join(", "),
+    },
+  ];
 
   return (
     <section className="bg-sand mt-20">
@@ -197,10 +227,20 @@ const ContactFormSection = () => {
               </h3>
               <div className="flex gap-6">
                 <span className="font-body text-sm text-foreground/50">
-                  <Link to="https://www.linkedin.com/company/rimal-trading-group/">
-                    <span className="font-bold">LinkedIn:</span> @
-                    {siteContent.company.social.linkedin}
-                  </Link>
+                  {isContactLoading ? (
+                    <span className="opacity-40 animate-pulse">Loading social link...</span>
+                  ) : isContactError || !contactData?.linkedIn ? (
+                    <span className="text-red-400/60 text-xs">LinkedIn unavailable</span>
+                  ) : (
+                    <a
+                      href={contactData.linkedIn}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-gold transition-colors duration-200"
+                    >
+                      <span className="font-bold">LinkedIn:</span> Rimal Trading Group
+                    </a>
+                  )}
                 </span>
               </div>
             </motion.div>
